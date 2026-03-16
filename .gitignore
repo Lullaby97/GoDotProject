@@ -1,3 +1,37 @@
-# Godot 4+ specific ignores
+# --- Godot 4 特定忽略 ---
 .godot/
-/android/
+# 导出预设（如果你想每台机器独立配置导出，可以忽略；一般建议保留）
+# export_presets.cfg
+
+# --- C# / .NET 特定忽略 ---
+# 编译产物
+bin/
+obj/
+# 局部配置
+.vs/
+.vscode/
+# 只有在不需要追踪项目结构时才忽略 sln/csproj，但在 Godot 开发中必须保留
+# *.user
+# *.userosscache
+# *.sln.docstates
+
+# --- 操作系统特定忽略 ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+__MACOSX/
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --- Cursor / IDE 特定忽略 ---
+.history/
+*.log

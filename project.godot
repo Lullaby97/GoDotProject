@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="XianxiaSurvivor"
-run/main_scene="uid://bk5o2l4pon1q2"
+run/main_scene="uid://qis8xllbuow6"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
