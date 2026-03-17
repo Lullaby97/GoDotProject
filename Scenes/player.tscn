@@ -7,9 +7,14 @@
 [ext_resource type="Resource" uid="uid://u31gyhw6mydg" path="res://Resources/Sects/SwordSect.tres" id="3_x3wgy"]
 [ext_resource type="Script" uid="uid://yq4t5lktympq" path="res://Scripts/Weapons/StarterWeaponComponent.cs" id="6_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://c3ingyfmrecmi" path="res://Scenes/Weapons/flying_sword.tscn" id="7_3smsa"]
+[ext_resource type="Script" uid="uid://wqgrrury4js8" path="res://Scripts/Components/HealthComponent.cs" id="8_8erm5"]
+[ext_resource type="Script" uid="uid://bocxc4fd8783t" path="res://Scripts/Player/PlayerHurtboxComponent.cs" id="9_f1ek2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 86.023254
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tx1dd"]
+radius = 93.05912
 
 [node name="Player" type="CharacterBody2D" unique_id=1299306545 groups=["Player"]]
 collision_mask = 2
@@ -32,3 +37,14 @@ script = ExtResource("3_vgqql")
 [node name="StarterWeaponComponent" type="Node2D" parent="." unique_id=1962665673]
 script = ExtResource("6_x3wgy")
 ProjectileScene = ExtResource("7_3smsa")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=390921105]
+script = ExtResource("8_8erm5")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=618562340]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_f1ek2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237319568]
+shape = SubResource("CircleShape2D_tx1dd")

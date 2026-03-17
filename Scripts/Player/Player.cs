@@ -7,6 +7,7 @@ using System;
 /// 遵循"组合优于继承"的架构原则。
 ///
 /// 持有种族和宗门数据引用，并提供统一的加成计算接口供各组件调用。
+/// 监听 HealthComponent 的死亡信号以处理玩家死亡。
 /// </summary>
 public partial class Player : CharacterBody2D
 {
@@ -18,6 +19,22 @@ public partial class Player : CharacterBody2D
     [Export]
     public SectData CurrentSect { get; set; }
 
+    private HealthComponent _healthComponent;
+
+    public override void _Ready()
+    {
+        _healthComponent = GetNodeOrNull<HealthComponent>("HealthComponent");
+
+        if (_healthComponent != null)
+        {
+            _healthComponent.Died += OnPlayerDied;
+        }
+        else
+        {
+            GD.PrintErr("[Player] 未找到 HealthComponent 子节点，玩家将无法死亡。");
+        }
+    }
+
     /// <summary>
     /// 计算速度总乘数。采用 GDD "加法叠乘" 公式：
     /// Total = 1 + (Race.SpeedMultiplier - 1) + (Sect速度加成)
@@ -28,7 +45,7 @@ public partial class Player : CharacterBody2D
     public float GetTotalSpeedMultiplier()
     {
         float raceBonus = CurrentRace != null ? CurrentRace.SpeedMultiplier - 1.0f : 0.0f;
-        float sectBonus = 0.0f; // SectData 暂无速度字段，预留扩展
+        float sectBonus = 0.0f;
 
         return 1.0f + raceBonus + sectBonus;
     }
@@ -41,9 +58,14 @@ public partial class Player : CharacterBody2D
     /// </summary>
     public float GetTotalAttackMultiplier()
     {
-        float raceBonus = 0.0f; // RaceData 暂无攻击力字段，预留扩展
+        float raceBonus = 0.0f;
         float sectBonus = CurrentSect != null ? CurrentSect.AttackPowerBonus : 0.0f;
 
         return 1.0f + raceBonus + sectBonus;
+    }
+
+    private void OnPlayerDied()
+    {
+        GetTree().ReloadCurrentScene();
     }
 }
