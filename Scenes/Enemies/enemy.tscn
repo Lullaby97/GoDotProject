@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://wqgrrury4js8" path="res://Scripts/Components/HealthComponent.cs" id="4_ubio8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcvw6"]
-radius = 87.965904
+radius = 31.400637
 
 [node name="Enemy" type="CharacterBody2D" unique_id=515453392]
 collision_layer = 2
