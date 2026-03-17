@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SectData" format=3 uid="uid://u31gyhw6mydg"]
+
+[ext_resource type="Script" uid="uid://60ggokctbprj" path="res://Scripts/Resources/SectData.cs" id="1_3hi3s"]
+
+[resource]
+script = ExtResource("1_3hi3s")
+SectName = "无极剑宗"
+AttackPowerBonus = 0.2
+metadata/_custom_type_script = "uid://60ggokctbprj"

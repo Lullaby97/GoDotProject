@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RaceData" format=3 uid="uid://jg6ayflcnxnb"]
+
+[ext_resource type="Script" uid="uid://gwrnc6aq45vu" path="res://Scripts/Resources/RaceData.cs" id="1_1nqhs"]
+
+[resource]
+script = ExtResource("1_1nqhs")
+RaceName = "人族"
+ExperienceBonus = 0.1
+metadata/_custom_type_script = "uid://gwrnc6aq45vu"

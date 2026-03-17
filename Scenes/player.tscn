@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://laeypgy4dlvu" path="res://Scripts/Player/Player.cs" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://b5eqxdc0go1s6" path="res://icon.svg" id="1_v0iea"]
+[ext_resource type="Resource" uid="uid://jg6ayflcnxnb" path="res://Resources/Races/human.tres" id="2_fkybt"]
 [ext_resource type="Script" uid="uid://wsfg1cuciyr5" path="res://Scripts/Player/PlayerMovementComponent.cs" id="3_vgqql"]
+[ext_resource type="Resource" uid="uid://u31gyhw6mydg" path="res://Resources/Sects/SwordSect.tres" id="3_x3wgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 86.023254
 
 [node name="Player" type="CharacterBody2D" unique_id=1299306545]
 script = ExtResource("1_6t5aa")
+CurrentRace = ExtResource("2_fkybt")
+CurrentSect = ExtResource("3_x3wgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022923570]
 texture = ExtResource("1_v0iea")

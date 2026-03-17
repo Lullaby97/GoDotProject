@@ -11,15 +11,15 @@ public partial class PlayerMovementComponent : Node
     [Export]
     public float BaseMoveSpeed { get; set; } = 300.0f;
 
-    private CharacterBody2D _player;
+    private Player _player;
 
     public override void _Ready()
     {
-        _player = GetParent() as CharacterBody2D;
+        _player = GetParent() as Player;
 
         if (_player == null)
         {
-            GD.PrintErr("[PlayerMovementComponent] 初始化失败：父节点不是 CharacterBody2D，请将本组件挂载为 Player 节点的子节点。");
+            GD.PrintErr("[PlayerMovementComponent] 初始化失败：父节点不是 Player，请将本组件挂载为 Player 节点的子节点。");
             return;
         }
     }
@@ -29,10 +29,12 @@ public partial class PlayerMovementComponent : Node
         if (_player == null)
             return;
 
-        // 获取归一化的输入方向向量（WASD / 摇杆）
         Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
-        _player.Velocity = inputDir * BaseMoveSpeed;
+        // 最终速度 = 基础移速 × 速度总乘数（种族 + 宗门加法叠乘）
+        float finalSpeed = BaseMoveSpeed * _player.GetTotalSpeedMultiplier();
+
+        _player.Velocity = inputDir * finalSpeed;
         _player.MoveAndSlide();
     }
 }
