@@ -12,6 +12,7 @@
 radius = 86.023254
 
 [node name="Player" type="CharacterBody2D" unique_id=1299306545 groups=["Player"]]
+collision_mask = 2
 script = ExtResource("1_6t5aa")
 CurrentRace = ExtResource("2_fkybt")
 CurrentSect = ExtResource("3_x3wgy")
