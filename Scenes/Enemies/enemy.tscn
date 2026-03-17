@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bx1t3v0a636bm"]
+
+[ext_resource type="Texture2D" uid="uid://b5eqxdc0go1s6" path="res://icon.svg" id="1_613su"]
+[ext_resource type="Script" uid="uid://knkd5jtg4sq1" path="res://Scripts/Enemies/Enemy.cs" id="1_x1rqp"]
+[ext_resource type="Script" uid="uid://b6uudvvuj6ckj" path="res://Scripts/Enemies/MeleeChaseComponent.cs" id="3_ubio8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcvw6"]
+radius = 87.965904
+
+[node name="Enemy" type="CharacterBody2D" unique_id=515453392]
+script = ExtResource("1_x1rqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1447257994]
+modulate = Color(0.5292831, 0.0002006571, 0.5292795, 1)
+texture = ExtResource("1_613su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137094742]
+shape = SubResource("CircleShape2D_jcvw6")
+
+[node name="MeleeChaseComponent" type="Node" parent="." unique_id=597286737]
+script = ExtResource("3_ubio8")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bk5o2l4pon1q2" path="res://Scenes/player.tscn" id="1_go701"]
 [ext_resource type="Texture2D" uid="uid://b5eqxdc0go1s6" path="res://icon.svg" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://bx1t3v0a636bm" path="res://Scenes/Enemies/enemy.tscn" id="3_5a7ea"]
 
 [node name="World" type="Node2D" unique_id=234534759]
 
@@ -26,3 +27,42 @@ texture = ExtResource("2_5a7ea")
 [node name="Icon5" type="Sprite2D" parent="." unique_id=527794117]
 position = Vector2(145, -173)
 texture = ExtResource("2_5a7ea")
+
+[node name="Enemy" parent="." unique_id=515453392 instance=ExtResource("3_5a7ea")]
+position = Vector2(-719, -201)
+
+[node name="Enemy2" parent="." unique_id=1544982869 instance=ExtResource("3_5a7ea")]
+position = Vector2(-728, 100)
+
+[node name="Enemy3" parent="." unique_id=14385585 instance=ExtResource("3_5a7ea")]
+position = Vector2(-532, 409)
+
+[node name="Enemy4" parent="." unique_id=127891890 instance=ExtResource("3_5a7ea")]
+position = Vector2(-119, 468)
+
+[node name="Enemy5" parent="." unique_id=956590338 instance=ExtResource("3_5a7ea")]
+position = Vector2(397, 488)
+
+[node name="Enemy6" parent="." unique_id=562879229 instance=ExtResource("3_5a7ea")]
+position = Vector2(730, 304)
+
+[node name="Enemy7" parent="." unique_id=1314875259 instance=ExtResource("3_5a7ea")]
+position = Vector2(575, -68)
+
+[node name="Enemy8" parent="." unique_id=845917902 instance=ExtResource("3_5a7ea")]
+position = Vector2(-482, -354)
+
+[node name="Enemy9" parent="." unique_id=915984835 instance=ExtResource("3_5a7ea")]
+position = Vector2(-151, -436)
+
+[node name="Enemy10" parent="." unique_id=1608101239 instance=ExtResource("3_5a7ea")]
+position = Vector2(333, -440)
+
+[node name="Enemy11" parent="." unique_id=1223684559 instance=ExtResource("3_5a7ea")]
+position = Vector2(689, -365)
+
+[node name="Enemy12" parent="." unique_id=1118050442 instance=ExtResource("3_5a7ea")]
+position = Vector2(881, -7)
+
+[node name="Enemy13" parent="." unique_id=916118530 instance=ExtResource("3_5a7ea")]
+position = Vector2(-511, -32)
