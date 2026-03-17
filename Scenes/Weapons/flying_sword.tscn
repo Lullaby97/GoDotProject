@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c3ingyfmrecmi"]
+
+[ext_resource type="Texture2D" uid="uid://b5eqxdc0go1s6" path="res://icon.svg" id="1_u6jxt"]
+[ext_resource type="Script" uid="uid://ccomqiddmimbr" path="res://Scripts/Weapons/Projectile.cs" id="2_307gl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_307gl"]
+size = Vector2(68, 14)
+
+[node name="FlyingSword" type="Area2D" unique_id=740786378]
+script = ExtResource("2_307gl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799762439]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("1_u6jxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=570583495]
+shape = SubResource("RectangleShape2D_307gl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1006450517]

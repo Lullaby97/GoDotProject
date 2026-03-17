@@ -5,6 +5,8 @@
 [ext_resource type="Resource" uid="uid://jg6ayflcnxnb" path="res://Resources/Races/human.tres" id="2_fkybt"]
 [ext_resource type="Script" uid="uid://wsfg1cuciyr5" path="res://Scripts/Player/PlayerMovementComponent.cs" id="3_vgqql"]
 [ext_resource type="Resource" uid="uid://u31gyhw6mydg" path="res://Resources/Sects/SwordSect.tres" id="3_x3wgy"]
+[ext_resource type="Script" uid="uid://yq4t5lktympq" path="res://Scripts/Weapons/StarterWeaponComponent.cs" id="6_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://c3ingyfmrecmi" path="res://Scenes/Weapons/flying_sword.tscn" id="7_3smsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 86.023254
@@ -25,3 +27,7 @@ position_smoothing_enabled = true
 
 [node name="PlayerMovementComponent" type="Node" parent="." unique_id=1720749520]
 script = ExtResource("3_vgqql")
+
+[node name="StarterWeaponComponent" type="Node2D" parent="." unique_id=1962665673]
+script = ExtResource("6_x3wgy")
+ProjectileScene = ExtResource("7_3smsa")
