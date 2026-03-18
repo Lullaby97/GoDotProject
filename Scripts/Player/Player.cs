@@ -23,6 +23,10 @@ public partial class Player : CharacterBody2D
 
     public override void _Ready()
     {
+        // 玩家不与敌人产生刚体碰撞（Layer 2），否则会被怪物卡住无法移动
+        // 受击判定由 Hurtbox (Area2D) 单独负责
+        SetCollisionMaskValue(2, false);
+
         _healthComponent = GetNodeOrNull<HealthComponent>("HealthComponent");
 
         if (_healthComponent != null)
@@ -66,6 +70,7 @@ public partial class Player : CharacterBody2D
 
     private void OnPlayerDied()
     {
-        GetTree().ReloadCurrentScene();
+        // 延迟到帧末再重载，避免在物理回调链中销毁正在遍历的节点
+        GetTree().CallDeferred("reload_current_scene");
     }
 }
